@@ -287,4 +287,6 @@
 ""2022-10-08 21:23:09 [http-nio-8080-exec-10] INFO  com.ecommerce.service.ClientService - requested all clients
 ""2022-10-08 21:23:49 [http-nio-8080-exec-1] INFO  com.ecommerce.service.ClientService - requested all clients
 ""2022-10-08 21:23:49 [http-nio-8080-exec-2] INFO  com.ecommerce.service.ClientService - requested all clients
+""2022-10-08 21:52:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-10-08 21:52:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
 "
