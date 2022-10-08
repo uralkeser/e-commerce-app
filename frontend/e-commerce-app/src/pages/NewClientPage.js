@@ -1,7 +1,7 @@
 import React from 'react'; 
-// import serialize from 'form-serialize';
 import InformArea from '../component/InformArea/InformArea';
-import ApplicationForm from '../component/ApplicationForm/ApplicationForm';
+import Form from '../component/Form/Form';
+import AppConfig from '../config/AppConfig';
 
 class NewClientPage extends React.Component {
   constructor(props){
@@ -9,23 +9,25 @@ class NewClientPage extends React.Component {
     this.state = {
       isFormSubmit: false,
       response: 'success',
-      message: ''
+      message: '',
     }
   }  
 
-  handleFormSubmit = (e) =>{
+  handleSubmit = (e) =>{
     e.preventDefault();
-  
-    //const newClient = serialize(e.target, {hash:true})
-
     const uri = "http://localhost:8080/api/v1/clients";
+    const requestBody = this.state;
+    delete requestBody.isFormSubmit;
+    delete requestBody.response;
+    delete requestBody.message;
+    console.log(requestBody);
 
     const requestOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify()
+      body: JSON.stringify(requestBody)
     }
 
     fetch(uri,requestOptions)
@@ -58,22 +60,34 @@ class NewClientPage extends React.Component {
       });
   }
 
+  handleInputChange = (event) => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.id;
+
+    this.setState({
+      [name]: value
+    });
+
+  }
+
   render(){
     return (
       <>
       {
         this.state.isFormSubmit ?  
         <InformArea 
-          type="client-result" 
-          result={this.state.response} 
-          successLink={"/clients"} 
-          failLink={"/newClient"} 
+          result={this.state.response}
+          successMessage = "client added!!!"
+          failMessage = "something went wrong"
+          successLink = {"/clients"} 
+          failLink = {"/newClient"} 
         />  
           : 
-        <ApplicationForm 
-          title="Info" 
+        <Form 
+          title="Client Content" 
           button="Send" 
-          formItems={null} 
+          formFields={AppConfig.clientAttributes} 
           onSubmit={this.handleSubmit} 
           onChange={this.handleInputChange} 
         /> 
