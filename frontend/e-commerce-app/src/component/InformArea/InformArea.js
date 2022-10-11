@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import {Alert} from 'react-bootstrap';
 import AppConfig from '../../config/AppConfig';
 

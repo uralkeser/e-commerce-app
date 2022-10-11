@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import Card from 'react-bootstrap/Card';
 import ProductCardFooter from '../ProductCardFooter/ProductCardFooter'; 
 

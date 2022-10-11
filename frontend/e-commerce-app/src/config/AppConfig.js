@@ -12,6 +12,7 @@ module.exports = {
     allCategoriesPath : "/categories",
     newCategoryPath : "/newCategory" ,
     
+    // backend
     clientURI: "http://localhost:8080/api/v1/clients",
     productsURI: "http://localhost:8080/api/v1/products",
     categoryURI:"http://localhost:8080/api/v1/categories",

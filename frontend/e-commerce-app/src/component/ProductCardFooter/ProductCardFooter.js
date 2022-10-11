@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 function ProductCardFooter({product}) {

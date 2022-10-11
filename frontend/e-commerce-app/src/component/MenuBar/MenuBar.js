@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 
 const MenuBar = (props) =>{

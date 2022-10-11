@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import "./FormItem.css";
 
 const FormItem = (props) =>{
