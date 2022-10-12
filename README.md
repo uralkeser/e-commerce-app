@@ -11,17 +11,26 @@ This Project has CRUD operations for Product, Client and Category of Product
 You can run this app using Docker or locally .
 
 ### 1- Run Project Using Docker
-Go to
+Please download: [Java](https://www.java.com/), [JDK](https://www.oracle.com/java/technologies/downloads/), [Maven](https://maven.apache.org/), [PostgreSQL](https://www.postgresql.org/), [Docker](https://www.docker.com/) 
+
+Open Directory `./backend/ecommerce` and run the command below. After that you may expect the file `target/ecommerce-0.0.1-SNAPSHOT.jar` to be created.
+
+```sh
+mvn clean install
+```
+
+Go to beginning directory and run the command below.
 ```sh
 docker-compose up
 ```
+
 ### 2- Run Project Locally
 This Project has two implemented parts(frontend and backend). Before run them properly you need to download some technologies and make some configuration mentioned below.
 
 #### Fronted Requirements
 Please download [Node.js](https://nodejs.org)
 
-After download Node.js go to the directory [e-commerce-app]() run this comment below to install node packages which are needed to run properly frontend part of the project.
+After download Node.js go to the directory `./frontend/e-commerce-app` run this comment below to install node packages which are needed to run properly frontend part of the project.
 
   ```sh
   npm install
@@ -50,8 +59,9 @@ spring.datasource.password=123qwe
 spring.datasource.driver-class-name=org.postgresql.Driver
 ```
 
-You must update `docker-compose.yml` according to your database credential aswell.
+You must update `docker-compose.yml` according to your database credential as well.
 
+Finally, open the directory ./backend/ecommerce and run the command below. run the command below
  
 ```sh
  mvn spring-boot:run
